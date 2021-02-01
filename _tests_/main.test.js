@@ -1,5 +1,6 @@
 import { quarterCounter } from './../src/main.js';
 import { coinCounter } from './../src/main.js';
+import { calcCoins } from './../src/main.js';
 
 describe('quaterCounter', () => {
 
@@ -21,3 +22,12 @@ describe('coinCounter', () => {
     expect(coinCounter(price, coins, value)).toEqual(499);
   });
 });
+
+describe('calcCoins', () => {
+  const price = 4.99;
+
+  test('should return all coin amounts', () => {
+    expect(calcCoins(price)).toEqual("Change would be 19 quarters, 2 dimes, 0 nickles, and 4 pennies.");
+  });
+});
+

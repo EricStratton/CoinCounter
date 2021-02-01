@@ -38,14 +38,15 @@ export const coinCounter = (price, coins, value) => {
 }
 
 
+export const calcCoins = (price) => {
 
+const quarters = coinCounter(price, 0, 0.25);
+const dimes = coinCounter(price%.25, 0, .10);
+const nickles = coinCounter((price%.25)%.10, 0, .05);
+const pennies = coinCounter(((price%.25)%.10)%.05, 0, .01);
 
-
-
-
-
-
-
+return `Change would be ${quarters} quarters, ${dimes} dimes, ${nickles} nickles, and ${pennies} pennies.`
+}
 
 
 // // price - (quarters * value)
