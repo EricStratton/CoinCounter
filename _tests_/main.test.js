@@ -1,11 +1,17 @@
-import { describe } from 'yargs';
-import Main from '../src/js/main.js';
+// import { exportAllDeclaration } from '@babel/types';
+// import { TestScheduler } from 'jest';
+// import { describe } from 'yargs';
+import { quarterCounter } from './../src/main.js';
 
-describe('Main', () => {
+describe('quaterCounter', () => {
 
-  let info;
+  const price = 4.99;
+  const num = 0;
 
-  beforeEach(() => {
-    info = new Main ()
+  
+  test('should subtract 0.25 from whole until whole is less than 0.25', () => {
+    expect(quarterCounter(price, num)).toEqual(19);
   });
-}
+
+});
+
