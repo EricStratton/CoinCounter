@@ -13,6 +13,14 @@
 //   }
 // }
 
-export const quarterCounter = (counter) => {
-
+export const quarterCounter = (price, quarters) => {
+  const value = 0.25;
+  if (isNaN(quarters)) { // terminal case
+    return;
+  }                     
+  if (price < value) { // base case
+    return quarters;
+  } else {
+    return quarterCounter(price - value, quarters + 1);
+  }
 }
